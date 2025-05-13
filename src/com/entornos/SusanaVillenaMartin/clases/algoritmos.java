@@ -5,7 +5,7 @@ package com.entornos.SusanaVillenaMartin.clases;
  * @author Susana
  */
 
-public class algoritmos {
+public abstract class algoritmos {
 	
 	/**
 	 * Calcula el numero fibonacci del numero pasado por parametro
@@ -50,20 +50,23 @@ public class algoritmos {
 	 * @return si es primo o no 
 	 */
 	public boolean primo(int numero) {
-		if(numero < 2) {
-			throw new IllegalArgumentException("El nuemro debe se mayor a 2");
-		}else {
-			if(numero%2 == 0) {
-				return false;
-			}
-			for(int i = 3; i*i <= numero; i++) {
-				if(numero%i ==0 ) {
-					return false;
-				}
-			}
-			return true;
-		}
+	    if (numero < 2) {
+	        throw new IllegalArgumentException("El número debe ser mayor o igual a 2");
+	    }
+	    if (numero == 2) {
+	        return true; // El 2 es primo
+	    }
+	    if (numero % 2 == 0) {
+	        return false; // Otros pares no lo son
+	    }
+	    for (int i = 3; i * i <= numero; i += 2) {
+	        if (numero % i == 0) {
+	            return false;
+	        }
+	    }
+	    return true;
 	}
+
 
 
 }
