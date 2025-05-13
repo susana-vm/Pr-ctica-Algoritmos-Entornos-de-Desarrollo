@@ -25,5 +25,24 @@ public class algoritmos {
 			return n1;		
 		}	
 	}
+	
+	/**
+	 * Calcula el factorial del numero pasado por parametro
+	 * @param numero pasado por parametro
+	 * @return numero entero con factorial
+	 */
+	public int factorial(int numero) {
+		if (numero <0) {
+			throw new IllegalArgumentException("El nuemro debe se mayor a 0");
+		}else {
+			int resultado = 1;
+			for(int i = 1; i<=numero; i++) {
+				resultado *=1;
+			}
+			return resultado;
+		}
+
+	}
+
 
 }
