@@ -43,6 +43,27 @@ public class algoritmos {
 		}
 
 	}
+	
+	/**
+	 * Metodo para devovler true si el numero es primo y false si no lo es
+	 * @param numero pasasdo por parametro
+	 * @return si es primo o no 
+	 */
+	public boolean primo(int numero) {
+		if(numero < 2) {
+			throw new IllegalArgumentException("El nuemro debe se mayor a 2");
+		}else {
+			if(numero%2 == 0) {
+				return false;
+			}
+			for(int i = 3; i*i <= numero; i++) {
+				if(numero%i ==0 ) {
+					return false;
+				}
+			}
+			return true;
+		}
+	}
 
 
 }
